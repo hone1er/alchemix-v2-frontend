@@ -107,7 +107,7 @@ Use at your own risk.
 </style>
 
 <div class="{$settings.invertColors ? 'inverseBg' : 'regularBg'} min-h-screen">
-  <div class=" fixed inset-0 overflow-auto pb-20 lg:pb-0">
+  <div class=" fixed inset-0 overflow-auto pb-20 max-w-screen-2xl m-auto lg:pb-0">
     <StateManager>
       <Modal>
         <Router url="{url}" basePath="{basePath}">
