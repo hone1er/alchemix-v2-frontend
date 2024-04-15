@@ -107,7 +107,7 @@ Use at your own risk.
 </style>
 
 <div class="{$settings.invertColors ? 'inverseBg' : 'regularBg'} min-h-screen">
-  <div class=" fixed inset-0 overflow-auto pb-20 max-w-screen-2xl m-auto lg:pb-0">
+  <div class=" fixed inset-0 overflow-auto pb-20 lg:pb-0">
     <StateManager>
       <Modal>
         <Router url="{url}" basePath="{basePath}">
@@ -125,7 +125,7 @@ Use at your own risk.
 
             <MenuNavbar />
 
-            <div class="col-span-12 flex">
+            <div class="col-span-12 flex 2xl:max-w-screen-2xl 2xl:m-auto">
               <div class="pl-8 pr-9 pt-8 w-96 hidden lg:block">
                 <SideBar />
               </div>
