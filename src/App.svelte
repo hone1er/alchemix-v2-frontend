@@ -139,7 +139,7 @@ Use at your own risk.
                   <Route path="/transmuter" component="{$addressStore ? Transmuter : NotConnectedFallback}" />
                   <Route path="/swap" component="{$addressStore ? Swap : NotConnectedFallback}" />
 
-                  <Route path="/farms" component="{$addressStore ? Farms : NotConnectedFallback}" />
+                  <Route path="/farms" component="{Farms}" />
                   <Route path="/governance" component="{Governance}" />
                   <Route path="/settings" component="{$addressStore ? Settings : NotConnectedFallback}" />
                   <Route path="/" component="{Landing}" />
