@@ -11,6 +11,7 @@
   import SideBar from '@components/composed/SideBar.svelte';
   import Footer from '@components/composed/Footer.svelte';
   import Emergency from '@components/elements/Emergency.svelte';
+  import NotConnectedFallback from '@components/composed/NotConnectedFallback.svelte';
 
   // router configuration and views
   import Landing from '@views/Landing.svelte';
@@ -29,6 +30,8 @@
 
   import { connect } from '@helpers/walletManager';
   import MenuNavbar from './components/composed/MenuNavbar.svelte';
+
+  import { addressStore } from './stores/v2/alcxStore';
 
   export let url = '';
   const deploymentUrl = window.location.host.split('.');
@@ -132,13 +135,13 @@ Use at your own risk.
               <div class="border-l {$settings.invertColors ? 'border-grey5inverse' : 'border-grey5'} w-full">
                 {#if walletChecked}
                   <!--                <Route path='/accounts' component='{Accounts}' />-->
-                  <Route path="/vaults" component="{Vaults}" />
-                  <Route path="/transmuter" component="{Transmuter}" />
-                  <Route path="/swap" component="{Swap}" />
+                  <Route path="/vaults" component="{$addressStore ? Vaults : NotConnectedFallback}" />
+                  <Route path="/transmuter" component="{$addressStore ? Transmuter : NotConnectedFallback}" />
+                  <Route path="/swap" component="{$addressStore ? Swap : NotConnectedFallback}" />
 
-                  <Route path="/farms" component="{Farms}" />
+                  <Route path="/farms" component="{$addressStore ? Farms : NotConnectedFallback}" />
                   <Route path="/governance" component="{Governance}" />
-                  <Route path="/settings" component="{Settings}" />
+                  <Route path="/settings" component="{$addressStore ? Settings : NotConnectedFallback}" />
                   <Route path="/" component="{Landing}" />
                   <Route path="/*" component="{Error}" />
                   <Route path="/sentinel" component="{Sentinel}" />
