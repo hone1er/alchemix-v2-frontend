@@ -128,7 +128,7 @@ Use at your own risk.
 
             <MenuNavbar />
 
-            <div class="col-span-12 flex">
+            <div class="col-span-12 flex 2xl:max-w-screen-2xl 2xl:m-auto">
               <div class="pl-8 pr-9 pt-8 w-96 hidden lg:block">
                 <SideBar />
               </div>
