@@ -28,7 +28,9 @@
     {#each sidebarSetup()
       .filter((key) => key.label !== 'sentinel')
       .filter((key) => key.label !== 'Cows')
-      .filter((key) => ($networkStore ? key.supportedChains.includes($networkStore) : true)) as sidebarItem}
+      .filter((key) => {
+        return $networkStore ? key.supportedChains.includes($networkStore) : true;
+      }) as sidebarItem}
       <li
         class="p-4 rounded-xl mb-5 cursor-pointer flex justify-between transition-opacity {$navigationStore.currentPathname ===
         `${sidebarItem.path}`
