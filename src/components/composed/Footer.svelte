@@ -8,7 +8,7 @@
 </script>
 
 <div class="flex flex-col">
-  <div class="flex flex-col space-y-4 lg:flex-row lg:space-x-11">
+  <div class="flex flex-col space-y-4 lg:flex-row lg:space-x-11 2xl:justify-between 2xl:px-4 2xl:max-w-screen-2xl 2xl:m-auto">
     <div class="w-60">
       <img
         src="./images/icons/ALCX_Std_logo.svg"
@@ -22,7 +22,6 @@
         {$_('footer_disclaimer')}
       </p>
     </div>
-
     <div>
       <p class="uppercase text-sm alcxTitle mb-5">{$_('navigation')}</p>
       <ul class="text-sm space-y-3">
