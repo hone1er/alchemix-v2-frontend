@@ -130,6 +130,7 @@ Use at your own risk.
                 <SideBar />
               </div>
               <div class="border-l {$settings.invertColors ? 'border-grey5inverse' : 'border-grey5'} w-full">
+                <Route path="/" component="{Landing}" />
                 {#if walletChecked}
                   <!--                <Route path='/accounts' component='{Accounts}' />-->
                   <Route path="/vaults" component="{Vaults}" />
@@ -139,7 +140,6 @@ Use at your own risk.
                   <Route path="/farms" component="{Farms}" />
                   <Route path="/governance" component="{Governance}" />
                   <Route path="/settings" component="{Settings}" />
-                  <Route path="/" component="{Landing}" />
                   <Route path="/*" component="{Error}" />
                   <Route path="/sentinel" component="{Sentinel}" />
                   <Route path="/get-out" component="{SecretCowLevel}" />
