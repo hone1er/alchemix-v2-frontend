@@ -47,7 +47,7 @@
     noBorder="{true}"
     isVisible="{false}"
   >
-    <div slot="header" class="flex space-x-4">
+    <div slot="header" class="flex flex-col sm:flex-row gap-4 sm:space-x-4">
       <Button
         label="{$_('vaults_page.borrow')}"
         width="w-full"
@@ -65,7 +65,7 @@
         <img
           slot="leftSlot"
           src="./images/icons/Icon_Borrow.svg"
-          class="{$settings.invertColors ? 'text-bronze4' : 'text-white2'} fill-current h-5"
+          class="hidden sm:block {$settings.invertColors ? 'text-bronze4' : 'text-white2'} fill-current h-5"
           alt="borrow"
         />
       </Button>
@@ -87,7 +87,7 @@
         <img
           slot="leftSlot"
           src="./images/icons/Icon_Repay.svg"
-          class="{$settings.invertColors ? 'text-bronze4' : 'text-white2'} fill-current h-5"
+          class="hidden sm:block {$settings.invertColors ? 'text-bronze4' : 'text-white2'} fill-current h-5"
           alt="repay"
         />
       </Button>
@@ -109,7 +109,7 @@
         <img
           slot="leftSlot"
           src="./images/icons/Icon_Liquidate.svg"
-          class="{$settings.invertColors ? 'text-bronze4' : 'text-white2'} fill-current h-5"
+          class="hidden sm:block {$settings.invertColors ? 'text-bronze4' : 'text-white2'} fill-current h-5"
           alt="liquidate"
         />
       </Button>
