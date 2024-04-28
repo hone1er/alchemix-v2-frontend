@@ -112,6 +112,7 @@ export async function deposit(
       tokenAddress !== '0xa258C4606Ca8206D8aA700cE2143D7db854D168c' &&
       tokenAddress !== '0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0' &&
       tokenAddress !== '0x5979D7b546E38E414F7E9822514be443A4800529' && // wstETH arbitrum
+      tokenAddress !== '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1' && // wstETH optimism
       gatewayIndexCheck >= 0 &&
       gatewayCheck[gatewayIndexCheck] !== undefined
     ) {

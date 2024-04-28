@@ -70,7 +70,7 @@
   closeOnMount="{$toastConfig.closeOnMount}"
   forceCloseToast="{$toastConfig.forceClose}"
 />
-<div class="flex flex-col md:flex-row gap-5 p-4 md:p-0 items-center justify-center md:justify-between">
+<div class="flex flex-col md:flex-row gap-5 p-4 md:p-0 items-center justify-center md:justify-between 2xl:max-w-[1150px] 2xl:m-auto">
   <div class="flex-1 flex items-center">
     <Link to="/">
       <div class="flex-shrink-0 flex items-center">

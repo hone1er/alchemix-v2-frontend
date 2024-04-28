@@ -11,6 +11,7 @@
   import SideBar from '@components/composed/SideBar.svelte';
   import Footer from '@components/composed/Footer.svelte';
   import Emergency from '@components/elements/Emergency.svelte';
+  import NotConnectedFallback from '@components/composed/NotConnectedFallback.svelte';
 
   // router configuration and views
   import Landing from '@views/Landing.svelte';
@@ -29,6 +30,8 @@
 
   import { connect } from '@helpers/walletManager';
   import MenuNavbar from './components/composed/MenuNavbar.svelte';
+
+  import { addressStore } from './stores/v2/alcxStore';
 
   export let url = '';
   const deploymentUrl = window.location.host.split('.');
@@ -125,21 +128,22 @@ Use at your own risk.
 
             <MenuNavbar />
 
-            <div class="col-span-12 flex">
+            <div class="col-span-12 flex 2xl:max-w-screen-2xl 2xl:m-auto">
               <div class="pl-8 pr-9 pt-8 w-96 hidden lg:block">
                 <SideBar />
               </div>
               <div class="border-l {$settings.invertColors ? 'border-grey5inverse' : 'border-grey5'} w-full">
+                
+                <Route path="/" component="{Landing}" />
                 {#if walletChecked}
                   <!--                <Route path='/accounts' component='{Accounts}' />-->
-                  <Route path="/vaults" component="{Vaults}" />
-                  <Route path="/transmuter" component="{Transmuter}" />
-                  <Route path="/swap" component="{Swap}" />
+                  <Route path="/vaults" component="{$addressStore ? Vaults : NotConnectedFallback}" />
+                  <Route path="/transmuter" component="{$addressStore ? Transmuter : NotConnectedFallback}" />
+                  <Route path="/swap" component="{$addressStore ? Swap : NotConnectedFallback}" />
 
                   <Route path="/farms" component="{Farms}" />
                   <Route path="/governance" component="{Governance}" />
-                  <Route path="/settings" component="{Settings}" />
-                  <Route path="/" component="{Landing}" />
+                  <Route path="/settings" component="{$addressStore ? Settings : NotConnectedFallback}" />
                   <Route path="/*" component="{Error}" />
                   <Route path="/sentinel" component="{Sentinel}" />
                   <Route path="/get-out" component="{SecretCowLevel}" />
