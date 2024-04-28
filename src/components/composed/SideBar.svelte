@@ -1,7 +1,5 @@
 <script>
-  import { onDestroy, onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  import { globalHistory } from 'svelte-routing/src/history';
   import { _ } from 'svelte-i18n';
   import Wallet from './Wallet.svelte';
   import { routerGuard } from '@helpers/routerGuard';
