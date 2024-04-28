@@ -77,9 +77,7 @@
     return utils.parseEther(`${inputValue}`);
   };
 
-  $: tokensForVaultType = useTokenListForVaultType(currentSelectedVaultType, [$vaultsStore]).filter((entry) =>
-    entry.balance.gt(BigNumber.from(0)),
-  );
+  $: tokensForVaultType = useTokenListForVaultType(currentSelectedVaultType, [$vaultsStore]);
 
   $: inputRepayAmountBN = useBigNumberForInput(inputRepayAmount);
 
@@ -156,13 +154,13 @@
     currentSelectedVaultType = value.detail.vault;
     currentSelectedUnderlyingTokenSymbol = useTokenListForVaultType(currentSelectedVaultType, [
       $vaultsStore,
-    ]).filter((entry) => entry.balance.gte(BigNumber.from(0)))[0].symbol;
+    ]).filter((entry) => entry.balance.gt(BigNumber.from(0)))[0].symbol;
   };
 </script>
 
 <ContainerWithHeader noBorder="{true}">
   <div slot="body" class="p-4 flex flex-col space-y-4">
-    <div class="flex flex-row space-x-4">
+    <div class="flex flex-col gap-4 sm:gap-0 sm:flex-row sm:space-x-4">
       {#each selectedVaultsType as vaultType}
         <DebtCard
           selected="{currentSelectedVaultType === vaultType}"

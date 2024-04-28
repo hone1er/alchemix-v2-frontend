@@ -205,7 +205,7 @@
 
 <ContainerWithHeader noBorder="{true}">
   <div slot="body" class="flex flex-col space-y-4 p-4">
-    <div class="flex flex-row space-x-4">
+    <div class="flex flex-col sm:flex-row gap-4 sm:gap-0 sm:space-x-4">
       {#each selectedVaultsType as vaultType}
         <DebtCard
           selected="{selectedVaultType === vaultType}"

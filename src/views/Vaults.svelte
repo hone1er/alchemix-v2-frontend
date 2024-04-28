@@ -372,7 +372,7 @@
       </div>
     </ContainerWithHeader>
   {:else}
-    <div class="sticky pt-4 top-0 z-40 backdrop-filter backdrop-blur filter drop-shadow-xl">
+    <div class="sm:sticky pt-4 top-0 z-40 backdrop-filter backdrop-blur filter drop-shadow-xl">
       <div class="w-full mb-8 md:h-10">
         <div class="w-full">
           <ContainerWithHeader>
